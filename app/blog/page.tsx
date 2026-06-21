@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import { PageHero } from '@/components/layout/page-hero'
 import { BlogCard } from '@/components/blog/blog-card'
 import { StaggerGroup } from '@/components/motion/reveal'
@@ -46,13 +47,15 @@ export default async function BlogPage({
 
       <section className="bg-foreground">
         <div className="container-px py-16 lg:py-20">
-          <BlogFilters
-            categories={categories}
-            tags={tags}
-            searchQuery={searchQuery}
-            selectedCategory={selectedCategory}
-            selectedTag={selectedTag}
-          />
+          <Suspense fallback={<div className="h-20" />}>
+            <BlogFilters
+              categories={categories}
+              tags={tags}
+              searchQuery={searchQuery}
+              selectedCategory={selectedCategory}
+              selectedTag={selectedTag}
+            />
+          </Suspense>
 
           {filteredPosts.length > 0 ? (
             <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

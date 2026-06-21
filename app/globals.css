@@ -119,8 +119,3 @@ a[class*="bg-gold"]:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
 }
-
-/* Enhanced card hover effects */
-.group:hover .group-hover\\:scale-105 {
-  transform: scale(1.05);
-}
