@@ -18,7 +18,6 @@ const builder = isSanityConfigured
 export function urlForImage(source: unknown): string {
   if (!builder || !source) return ''
   try {
-    // @ts-expect-error - source is a Sanity image reference
     return builder.image(source).auto('format').fit('max').url()
   } catch {
     return ''

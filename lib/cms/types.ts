@@ -10,7 +10,7 @@ export type Service = {
   slug: string
   excerpt: string
   description: string
-  image: string
+  image: any
   benefits: string[]
   category: 'Real Estate' | 'Construction' | 'Investment'
 }

@@ -17,7 +17,7 @@ export function PageHero({
   eyebrow: string
   title: React.ReactNode
   description?: string
-  image: string
+  image?: string
   crumbs?: Crumb[]
 }) {
   return (

@@ -6,6 +6,7 @@ import { PageHero } from '@/components/layout/page-hero'
 import { getService, getServices } from '@/lib/cms'
 import { Reveal, StaggerGroup } from '@/components/motion/reveal'
 import { ArrowRight, CheckCircle2, ArrowLeft } from 'lucide-react'
+import { urlFor } from '@/sanity/lib/image'
 
 export async function generateStaticParams() {
   const services = await getServices()
@@ -43,7 +44,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         eyebrow={service.category}
         title={service.title}
         description={service.excerpt}
-        image={service.image}
+        image={service.image ? urlFor(service.image).url() : undefined}
         crumbs={[
           { label: 'Services', href: '/services' },
           { label: service.title },
@@ -57,7 +58,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             {service.image && (
               <Reveal className="mb-12 aspect-[16/9] overflow-hidden">
                 <Image
-                  src={service.image}
+                  src={urlFor(service.image).url()}
                   alt={service.title}
                   width={1200}
                   height={675}
@@ -129,7 +130,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
-                      src={relatedService.image}
+                      src={relatedService.image ? urlFor(relatedService.image).url() : '/placeholder.svg'}
                       alt={relatedService.title}
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"

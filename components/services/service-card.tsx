@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import type { Service } from '@/lib/cms'
 import { fadeUp } from '@/components/motion/reveal'
+import { urlFor } from '@/sanity/lib/image'
 
 export function ServiceCard({ service }: { service: Service }) {
   return (
@@ -16,7 +17,7 @@ export function ServiceCard({ service }: { service: Service }) {
       >
         <div className="relative aspect-[4/3] overflow-hidden">
           <Image
-            src={service.image || '/placeholder.svg'}
+            src={service.image ? urlFor(service.image).url() : '/placeholder.svg'}
             alt={service.title}
             fill
             sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
