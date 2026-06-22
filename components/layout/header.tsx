@@ -41,9 +41,8 @@ export function Header() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-all duration-500',
-        scrolled
-          ? 'border-b border-white/10 bg-[#0a0a0a]/80 backdrop-blur-xl'
-          : 'border-b border-transparent bg-transparent',
+        'border-b border-white/10 bg-[#0a0a0a]/95 lg:bg-transparent',
+        scrolled && 'lg:bg-[#0a0a0a]/80 lg:backdrop-blur-xl',
       )}
     >
       <nav className="container-px flex h-20 items-center justify-between">
