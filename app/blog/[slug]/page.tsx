@@ -70,11 +70,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         ]}
       />
 
-      <article className="bg-background">
+      <article className="bg-foreground">
         <div className="container-px py-16 lg:py-20">
           <div className="mx-auto max-w-3xl">
             {/* Post Meta */}
-            <Reveal className="mb-8 flex flex-wrap items-center gap-6 text-sm text-black/60">
+            <Reveal className="mb-8 flex flex-wrap items-center gap-6 text-sm text-white/60">
               <div className="flex items-center gap-2">
                 <User className="h-4 w-4 text-gold" />
                 <span>{post.author}</span>
@@ -91,7 +91,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
             {/* Cover Image */}
             {post.coverImage && (
-              <Reveal className="mb-12 aspect-[16/9] overflow-hidden">
+              <Reveal className="mb-12 aspect-[16/9] rounded-2xl overflow-hidden">
                 <Image
                   src={post.coverImage}
                   alt={post.title}
@@ -113,7 +113,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                         {block.heading}
                       </h2>
                     )}
-                    <p className="text-lg leading-relaxed text-black/80">{block.text}</p>
+                    <p className="text-lg leading-relaxed text-white/60">{block.text}</p>
                   </div>
                 ))}
               </div>
@@ -127,7 +127,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-lg border border-black/20 bg-black/5 px-4 py-2 text-sm font-medium text-black transition-all hover:border-gold hover:bg-gold/10"
+                      className="rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white transition-all hover:border-gold hover:bg-gold/10"
                     >
                       #{tag}
                     </span>
@@ -137,16 +137,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             )}
 
             {/* Share */}
-            <Reveal className="mt-16 rounded-2xl border border-black/10 bg-gradient-to-br from-black/5 to-transparent p-8">
+            <Reveal className="mt-16 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-8">
               <h3 className="mb-6 font-serif text-2xl font-semibold text-gold">Share this article</h3>
               <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-black/70">Help others discover this content</p>
+                <p className="text-white/70">Help others discover this content</p>
                 <div className="flex gap-3">
                   <a
                     href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`${siteConfig.url}/blog/${post.slug}`)}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-black/20 bg-black/5 text-black/70 transition-all hover:border-gold hover:bg-gold hover:text-white"
+                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/20 bg-white/5 text-white/70 transition-all hover:border-gold hover:bg-gold hover:text-white"
                     aria-label="Share on Twitter"
                   >
                     <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -157,7 +157,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${siteConfig.url}/blog/${post.slug}`)}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-black/20 bg-black/5 text-black/70 transition-all hover:border-gold hover:bg-gold hover:text-white"
+                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/20 bg-white/5 text-white/70 transition-all hover:border-gold hover:bg-gold hover:text-white"
                     aria-label="Share on LinkedIn"
                   >
                     <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -168,7 +168,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${siteConfig.url}/blog/${post.slug}`)}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-black/20 bg-black/5 text-black/70 transition-all hover:border-gold hover:bg-gold hover:text-white"
+                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/20 bg-white/5 text-white/70 transition-all hover:border-gold hover:bg-gold hover:text-white"
                     aria-label="Share on Facebook"
                   >
                     <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -183,7 +183,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <Reveal className="mt-12">
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 rounded-lg border border-black/20 bg-black/5 px-6 py-3 text-sm font-medium text-black/70 transition-all hover:border-gold hover:bg-gold hover:text-white"
+                className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-6 py-3 text-sm font-medium text-white/70 transition-all hover:border-gold hover:bg-gold hover:text-white"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Back to Blog

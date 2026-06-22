@@ -118,12 +118,12 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="flex flex-col items-center justify-between gap-3 py-6 sm:flex-row">
+        <div className="flex flex-col items-center justify-between mx-9 gap-3 py-6 sm:flex-row">
           <p className="text-xs text-white/40">
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
           <p className="text-xs text-white/40">
-            Crafted for {siteConfig.url.replace('https://', '')}
+            Crafted By <span className="text-gold">Engr. Muazam Mughal</span>
           </p>
         </div>
       </div>

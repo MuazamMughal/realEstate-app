@@ -47,7 +47,7 @@ export default async function BlogPage({
 
       <section className="bg-foreground">
         <div className="container-px py-16 lg:py-20">
-          <Suspense fallback={<div className="h-20" />}>
+          {/* <Suspense fallback={<div className="h-20" />}>
             <BlogFilters
               categories={categories}
               tags={tags}
@@ -55,7 +55,7 @@ export default async function BlogPage({
               selectedCategory={selectedCategory}
               selectedTag={selectedTag}
             />
-          </Suspense>
+          </Suspense> */}
 
           {filteredPosts.length > 0 ? (
             <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
